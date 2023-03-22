@@ -1,5 +1,5 @@
-let yearOfBirth = +prompt("Write your year of birth");
-let city = prompt("Write your city");
+let yearOfBirth = +prompt("Напиши твій рік народження");
+let city = prompt("З якого ті міста?");
 let favouriteSport = prompt("Який вид спорта тобі подобається: футбол, тенис або хокей?");
 
 
