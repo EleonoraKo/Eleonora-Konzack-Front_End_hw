@@ -6,18 +6,24 @@
 
 
 
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
+generateKey = function (length, characters) {
+  let res = [];
+  for(let i = 0; i < length; i++){
+    // word += alphabet[Math.round(Math.random() * (alphabet.length - 1))];
+    res.push(characters.charAt(Math.floor(Math.random() *characters.length)));
+  }
+  return res
+}
+const key = generateKey(16, characters);
+console.log(key);
 
-
-
-
-
-// const characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
-// generateKey = function (length, characters) {
-//   let result = [];
-//   for(let i = 0; i < length; i++){
-//     result.push(characters.charAt(Math.floor(Math.random() *characters.length)));
-//   }
-//   return result
-// }
-// const key = generateKey(16, characters);
-// console.log(key.join(''));
+// function generateKey(length, characters) {
+//     let result = '';
+//     for (let i = 0; i < length; i++) {
+//     const randomIndex = Math.floor(Math.random() * characters.length);
+//     result += characters[randomIndex];
+//     }
+//     return result;
+//     }
+//     console.log(result)
