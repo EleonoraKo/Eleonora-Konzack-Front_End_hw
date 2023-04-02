@@ -10,7 +10,7 @@ function removeElement(array, item) {
     }
     return array;
 }
-let array = [1, 2, 3, 4, 5, 6]
+let array = [1, 2, 3, 4, 5, 6,7]
 removeElement(array,2);
 
 console.log(array)
