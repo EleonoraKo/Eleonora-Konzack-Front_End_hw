@@ -6,7 +6,7 @@
 
 
 
-const characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
+/*const characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
 generateKey = function (length, characters) {
   let res = [];
   for(let i = 0; i < length; i++){
@@ -16,7 +16,7 @@ generateKey = function (length, characters) {
   return res
 }
 const key = generateKey(16, characters);
-console.log(key);
+console.log(key);*/
 
 // function generateKey(length, characters) {
 //     let result = '';
@@ -27,3 +27,31 @@ console.log(key);
 //     return result;
 //     }
 //     console.log(result)
+
+// for (let i = 0; i < 10; i++){
+// for(let k = 0; k < 1; k++){
+//   document.write(`f`)
+// // }
+
+// i += '*'
+//   document.write(i)
+// }
+
+let div1 = document.querySelector('.div1');
+let btn = document.querySelector('.btn');
+// let inp = document.querySelector('.inp1').value;
+ 
+function foo() {
+ div1.innerHTML = 1;
+ }
+ console.log(foo)
+
+// let inputIn08 = document.querySelector('.i-8');
+//   let button8 = document.querySelector('b-8');
+//   let div08 = document.querySelector('.out-8');
+
+// // function t8() {
+//   let b = inputIn08.value;
+//   div08.innerHTML = b;
+// // }
+// // document.querySelector('.b-8').onclick = t8;
