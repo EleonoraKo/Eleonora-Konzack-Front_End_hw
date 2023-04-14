@@ -5,9 +5,10 @@
 
 let sum = (function () {
     let result = 0;
-    return function(a) {
-    result += a;
-    return result; }
+    return function (a) {
+        result += a;
+        return result;
+    }
 })();
 
 console.log(sum(3));
