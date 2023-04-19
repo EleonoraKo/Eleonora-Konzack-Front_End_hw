@@ -38,6 +38,7 @@ class Flat {
 // Методи:
 // конструктор, який приймає один параметр: максимальну кількість квартир;
 // додати квартиру - метод повинен приймати екземпляр класу Квартира, перевіряти, чи не буде кількість перевищувати максимальну кількість квартир, і якщо це так, додати квартиру, в іншому випадку виводить у консоль відповідне повідомлення.
+
 class House {
     constructor(maxFlats) {
         this.flat = [];
@@ -45,7 +46,7 @@ class House {
     }
     addFlats(flat) {
         if (this.flat.length < this.maxFlats) {
-            this.flat.push(flat)
+            this.flat.push(flat);
         }
     }
 }
@@ -56,12 +57,13 @@ class House {
 const person1 = new Person('Viktor', 'male');
 const person2 = new Person('Nina', 'female');
 const person3 = new Person('Taras', 'male');
-console.log(person1,);
+console.log(person1);
 console.log(person2);
 console.log(person3);
 
 // декілька екземплярів класу Квартира;
 // додадити екземпляри класу Людина до екземплярів класу Квартира;
+
 const flat1 = new Flat();
 flat1.addResident(person1);
 flat1.addResident(person2);
@@ -76,4 +78,4 @@ console.log(flat2);
 const house = new House(5);
 house.addFlats(flat1);
 house.addFlats(flat2);
-console.log(house)
+console.log(house);
