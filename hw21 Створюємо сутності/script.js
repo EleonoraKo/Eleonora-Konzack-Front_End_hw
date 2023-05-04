@@ -13,7 +13,7 @@ class Person {
         this.age = age;
     }
     showperson() {
-        console.log(`name: ${this.name}, age: ${this.age}`);
+        return (`name: ${this.name}, age: ${this.age}`);
     }
 }
 
@@ -34,43 +34,45 @@ class Car {
         this.year = year;
         this.carNumber = carNumber;
     }
-    addOwnder(owner) {
-        if (owner.age >= 18) {
-            this.owner=owner;
+    addOwnder(human) {
+        if (human.age >= 18) {
+            this.owner = human;
         }
         else {
-            console.log(`${owner.name} is under 18`);
+            console.log(`${human.name} is under 18`);
         }
     }
     printDetails() {
+
         console.log(`brand: ${this.brand}, 
         model: ${this.model},  
         year: ${this.year}, 
-        number: ${this.carNumber}`);
-        
+        number: ${this.carNumber},
+        Owner: ${this.owner ? this.owner.showperson() : ''}`)
+
     }
 }
 
 // В якості демонстраціїї створити:
 // декілька екземплярів класу Людина;
-
 // присвоїти власників автомобілям.
-
+// декілька екземплярів класу Автомобіль;
 const pers1 = new Person("John", 18);
 const pers2 = new Person("Peter", 17);
 const pers3 = new Person("Kerstin", 55);
 
 
-// декілька екземплярів класу Автомобіль;
 const car1 = new Car("Nissan", "S8", 2015, 1);
-const car2 = new Car("Yugo", "Koral", 1990, 2);
-const car3 = new Car("Wartburg", "800", 1985, 3);
+const car2 = new Car("BMW", "VVV", 1990, 2);
+const car3 = new Car("Daewoo", "NNN", 1985, 3);
 
-car1.addOwnder(pers1)
-console.log(car1.printDetails());
 
+car1.addOwnder(pers1);
+car1.printDetails()
 car2.addOwnder(pers2);
+car2.printDetails()
 car3.addOwnder(pers3);
+car3.printDetails()
 
 
 
