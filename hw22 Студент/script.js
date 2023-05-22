@@ -126,8 +126,8 @@ Maria.present();
 
 console.log("Age: " + Ivan.getAge());
 console.log("Average score: " + Ivan.getAverageScore());
-console.log(Ivan.getVisetedClasses());
-console.log(Ivan.summary());
+console.log("Visited classes: " + Ivan.getVisetedClasses());
+console.log("Final result: " + Ivan.summary());
 
 
 console.log('********************************************');
@@ -135,5 +135,5 @@ console.log('********************************************');
 
 console.log("Age: " + Maria.getAge());
 console.log("Average score: " + Maria.getAverageScore());
-console.log(Maria.getVisetedClasses());
-console.log(Maria.summary());
+console.log("Visited classes: " + Maria.getVisetedClasses());
+console.log("Final result: " + Maria.summary());
