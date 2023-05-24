@@ -1,124 +1,95 @@
 // Мережа фастфудів пропонує кілька видів гамбургерів:
 // маленький (50 тугриків, 20 калорій);
 // великий (100 тугриків, 40 калорій).
-class Hamburger {
-  constructor(size, stuffing) {
-    this.size = size;
-    this.stuffing = stuffing;
-    this.topping = [];
-  }
-
 // Гамбургер може бути з одним із декількох видів начинок:
 // сиром (+ 10 тугриків, + 20 калорій);
 // салатом (+ 20 тугриків, + 5 калорій);
 // картоплею (+ 15 тугриків, + 10 калорій).
-
-
 // Можна додати добавки:
-
 // посипати приправою (+15 тугриків, 0 калорій) - полити майонезом (+ 20 тугриків, +5 калорій).
 
 
-// Напишіть програму, яка розраховує вартість та калорійність гамбургера. Використовуйте ООП підхід.
 
-// (підказка: потрібен клас Гамбургер, константи, методи для вибору опцій та розрахунку потрібних величин)
-
-
-// // маленький гамбургер з начинкою з сиру
-// var hamburger = new Hamburger(Hamburger .SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-
-// // добавка з майонезу
-// hamburger.addTopping(Hamburger.TOPPING_MAYO);
-
-// // запитаємо скільки там калорій
-// console.log(“Calories: “ + hamburger.calculate ());
-
-// // скільки коштує
-// console.log("Price: “ + hamburger.calculatePrice());
-
-// // я тут передумав і вирішив додати ще приправу
-// hamburger.addTopping(Hamburger .TOPPING_SAUCE);
-
-// // А скільки тепер коштує?
-// console.log("Price with sauce: “ + hamburger.calculatePrice());
-
-
-  addTopping(topping) {
-    let isPresent = 0;
-    for (let i = 0; i < this.topping.length; i++) {
-      if (this.topping[i] === topping) {
-        isPresent++;
-      }
+class Hamburger {
+    constructor(size, stuffing) {
+        this.size = size;
+        this.stuffing = stuffing;
     }
-    if (!isPresent) {
-      this.topping.push(topping);
-    } else {
-      console.log("Такая добавка уже есть");
-    }
-  }
+    topping = [];
 
-  removeTopping(topping) {
-    for (let i = 0; i < this.topping.length; i++) {
-      if (this.topping[i] === topping) {
-        delete this.topping[i];
-      }
-    }
-  }
 
-  calcPrice() {
-    let totalPrice;
-    let toppingPrice = 0;
-    for (let i = 0; i < this.topping.length; i++) {
-      toppingPrice += this.topping[i].price;
+    static SIZE_SMALL = {
+        price: 50,
+        calories: 20
     }
-    totalPrice = this.size.price + this.stuffing.price + toppingPrice;
-    return totalPrice;
-  }
 
-  calcCalories() {
-    let totalCalories;
-    let toppingPrice = 0;
-    for (let i = 0; i < this.topping.length; i++) {
-      toppingPrice += this.topping[i].calories;
+    static SIZE_BIG = {
+        price: 100,
+        calories: 40
     }
-    totalCalories = this.size.calories + this.stuffing.calories + toppingPrice;
-    return totalCalories;
-  }
+
+    static STUFFING_CHEESE = {
+        price: 10,
+        calories: 20
+    }
+
+    static STUFFING_SALAD = {
+        price: 20,
+        calories: 5
+    }
+
+    static STUFFING_POTATO = {
+        price: 15,
+        calories: 10
+    }
+
+    static TOPPING_MAYO = {
+        price: 20,
+        calories: 5
+    }
+
+    static TOPPING_SAUCE = {
+        price: 15,
+        calories: 0
+    }
+
+    calculate() {
+        let cal = this.size.calories + this.stuffing.calories;
+        for (let i = 0; i < this.topping.length; i++) {
+            cal += this.topping[i].calories;
+        }
+        return cal;
+    }
+
+    calculatePrice() {
+        let pr = this.size.price + this.stuffing.price;
+        for (let i = 0; i < this.topping.length; i++) {
+            pr += this.topping[i].price;
+        }
+        return pr;
+    }
+
+    addTopping(topping) {
+        this.topping.push(topping);
+    }
+
 }
 
-Hamburger.sizeSmall = { name: "Small size", price: 50, calories: 20 };
-Hamburger.sizeBig = { name: "Big size", price: 100, calories: 40 };
 
-Hamburger.stuffingCheese = {
-  name: "stuffing Cheese",
-  price: 10,
-  calories: 20,
-};
-Hamburger.stuffingSalad = { stuff: "stuffing Salad", price: 20, calories: 5 };
-Hamburger.stuffingPotato = {
-  name: "stuffing Potato",
-  price: 15,
-  calories: 10,
-};
+// маленький гамбургер з начинкою з сиру
+var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 
-Hamburger.toppingMayo = {
-  name: "topping Mayo",
-  price: 20,
-  calories: 5,
-};
-Hamburger.toppingSpice = {
-  name: "topping Spice",
-  price: 15,
-  calories: 0,
-};
+// добавка з майонезу
+hamburger.addTopping(Hamburger.TOPPING_MAYO);
 
-const hamburger = new Hamburger(Hamburger.sizeBig, Hamburger.stuffingCheese);
+// запитаємо скільки там калорій
+console.log("Calories: " + hamburger.calculate());
 
-hamburger.addTopping(Hamburger.toppingMayo);
-console.log("Calories: " + hamburger.calcCalories());
+// скільки коштує
+console.log("Price: " + hamburger.calculatePrice());
 
-console.log("Price: " + hamburger.calcPrice() + " тугриків");
-hamburger.addTopping(Hamburger.toppingSpice);
-console.log("Price with spice: " + hamburger.calcPrice() + " тугриків");
+// я тут передумав і вирішив додати ще приправу
+hamburger.addTopping(Hamburger.TOPPING_SAUCE);
 
-console.log(hamburger);
+// А скільки тепер коштує?
+console.log("Price with sauce: " + hamburger.calculatePrice());
