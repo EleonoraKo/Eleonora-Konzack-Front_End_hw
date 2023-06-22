@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Форма для реєстрації</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="https://fom.in.ua/echo" method="get">
+            <fieldset>
+                <div>
+                    <label for="name">Ваше ім'я: * </label>
+                    <input type="text" name="name" id="name" required autofocus>
+                </div>
+                <div>
+                    <label for="surname">Ваше прізвище: * </label>
+                    <input type="text" name="surnamename" id="surname" required>
+                </div>
+                <div>
+                    <label for="birth">Ваша дата народження: * </label>
+                    <input type="date" name="birth" id="birth" required>
+                </div>
+                <div>
+                    <label for="phone">Телефон: * </label>
+                    <input type="tel" name="tel" id="phone" required>
+                </div>
+                <div> <b>Стать</b>
+
+                    <label>
+                        <input type="radio" name="gender" value="female" checked>Жіноча
+                    </label>
+
+
+                    <label>
+                        <input type="radio" name="gender" value="male">Чоловіча
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Місто:
+                        <select name="city">
+                            <optgroup label="Україна">
+                                <option value="Київ">Київ</option>
+                                <option value="Львів">Львів</option>
+                                <option value="Одеса">Одеса</option>
+                                <option value="Одеса">Харків</option>
+                                <option value="Одеса">Дніпро</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                </div>
+
+                <div>
+                    <textarea name="message" cols="30" rows="10" placeholder="Ваша адреса"></textarea>
+                </div>
+
+                <div>
+                    <div><p><b>Якою мовою Ви розмовляєте</b></p></div>
+                    <label>
+                        <input class="language" type="checkbox" name="language">українська
+                    </label>
+
+
+                    <label>
+                        <input  class="language" type="checkbox" name="language">англійська
+                    </label>
+                    <label>
+                        <input  class="language" type="checkbox" name="language">німецька
+                    </label>
+                </div>
+<button type="submit">Отправить</button>
+
+            </fieldset>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

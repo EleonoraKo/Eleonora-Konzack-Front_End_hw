@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: beige;
+}
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slider-pics {
+  width: 900px;
+  height: 600px;
+}
+.slider-text {
+    padding: 20px 0;
+    font-size: 30px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    padding-bottom: 150px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
