@@ -11,19 +11,19 @@
 
 <body>
     <div class="container">
-        <form action="https://fom.in.ua/echo" method="get">
+        <form method="get">
             <fieldset>
                 <div>
                     <label for="name">Ваше ім'я: * </label>
-                    <input type="text" name="name" id="name" required autofocus>
+                    <input class="name" type="text" name="name" id="name" required autofocus>
                 </div>
                 <div>
                     <label for="surname">Ваше прізвище: * </label>
-                    <input type="text" name="surnamename" id="surname" required>
+                    <input type="text" name="surname" id="surname" required>
                 </div>
                 <div>
                     <label for="birth">Ваша дата народження: * </label>
-                    <input type="date" name="birth" id="birth" required>
+                    <input type="date" name="birth" id="birth">
                 </div>
                 <div>
                     <label for="phone">Телефон: * </label>
@@ -73,7 +73,7 @@
                         <input  class="language" type="checkbox" name="language">німецька
                     </label>
                 </div>
-<button type="submit">Отправить</button>
+<button class="btn" type="submit">Отправить</button>
 
             </fieldset>
         </form>
