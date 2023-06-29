@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <form method="get">
+        
             <fieldset>
                 <div>
                     <label for="name">Ваше ім'я: * </label>
@@ -60,23 +60,28 @@
                 </div>
 
                 <div>
-                    <div><p><b>Якою мовою Ви розмовляєте</b></p></div>
+                    <div>
+                        <p><b>Якою мовою Ви розмовляєте</b></p>
+                    </div>
                     <label>
                         <input class="language" type="checkbox" name="language">українська
                     </label>
 
 
                     <label>
-                        <input  class="language" type="checkbox" name="language">англійська
+                        <input class="language" type="checkbox" name="language">англійська
                     </label>
                     <label>
-                        <input  class="language" type="checkbox" name="language">німецька
+                        <input class="language" type="checkbox" name="language">німецька
                     </label>
                 </div>
-<button class="btn" type="submit">Отправить</button>
+                <button class="btn" type="submit">Отправить</button>
 
             </fieldset>
-        </form>
+        
+    </div>
+    <div>
+        <table id="tbl"></table>
     </div>
     <script src="./script.js"></script>
 

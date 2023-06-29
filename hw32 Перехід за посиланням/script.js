@@ -23,15 +23,7 @@
 
 // document.body.appendChild(sideDiv);
 
-let dog = '';
-for (let i = 2; i < 100; i++){
-    if(i%5 === 0){
-        dog +=i + "_"
-    }
-    
-    
-}
-document.body.append(dog);
+
 
 let table = document.createElement('table')
 for (let i = 1; i <= 10; i++){
