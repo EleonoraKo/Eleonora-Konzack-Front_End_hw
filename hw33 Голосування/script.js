@@ -8,9 +8,6 @@ const votingData = {
 
 const parentElement = document.getElementById('voting');
 
-
-
-
 parentElement.addEventListener('click', (e) => {
     const clickedElement = e.target;
     const elementID = clickedElement.parentElement.id;
