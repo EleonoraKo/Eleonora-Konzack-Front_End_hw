@@ -43,7 +43,7 @@
                 <div>
                     <label>
                         Місто:
-                        <select name="city">
+                        <select name="city" id="city">
                             <optgroup label="Україна">
                                 <option value="Київ">Київ</option>
                                 <option value="Львів">Львів</option>
@@ -56,7 +56,7 @@
                 </div>
 
                 <div>
-                    <textarea name="message" cols="30" rows="10" placeholder="Ваша адреса"></textarea>
+                    <textarea name="message" cols="30" rows="10" placeholder="Ваша адреса" id="adress"></textarea>
                 </div>
 
                 <div>
@@ -64,15 +64,15 @@
                         <p><b>Якою мовою Ви розмовляєте</b></p>
                     </div>
                     <label>
-                        <input class="language" type="checkbox" name="language">українська
+                        <input class="language" type="checkbox" name="language" value="українська">українська
                     </label>
 
 
                     <label>
-                        <input class="language" type="checkbox" name="language">англійська
+                        <input class="language" type="checkbox" name="language" value="англійська">англійська
                     </label>
                     <label>
-                        <input class="language" type="checkbox" name="language">німецька
+                        <input class="language" type="checkbox" name="language" value="німецька">німецька
                     </label>
                 </div>
                 <button class="btn" type="submit">Отправить</button>

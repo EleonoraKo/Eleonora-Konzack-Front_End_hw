@@ -1,13 +1,4 @@
 
-// let table = document.createElement('table');
-
-// for (let i = 1; i <= 6; i++){
-//    let row = table.insertRow();
-//     for (let j = 1; j <= 2; j++){
-// let cell = row.insertCell();(
-// }
-// }
-
 function addRow(text, value) {
     let table = document.querySelector('#tbl');
     let row = table.insertRow();
@@ -22,10 +13,24 @@ function addRow(text, value) {
 //document.body.appendChild(table);
 
 function fname() {
-    const name = document.querySelector('#name').value;
-    const surnamename = document.querySelector('#surname').value;
+
+    const gender = Array.prototype.slice.call(document.getElementsByName("gender")).filter(ch => ch.checked==true)[0].value;
+
+    const languages = document.getElementsByClassName("language");
+    let langString = '';
+    for(let i = 0; i < languages.length; i++){
+        if (languages[i].checked){
+            langString += languages[i].value + " ";
+        }
+    }
+
     addRow('Name', document.querySelector('#name').value);
-    //cell1.innerHTML = 'Ваше імя';
-    //cell2.innerHTML = name
+    addRow('Surname', document.querySelector('#surname').value);
+    addRow('Birthdate', document.querySelector('#birth').value);
+    addRow('Telephone', document.querySelector('#phone').value);
+    addRow('Gender', gender);
+    addRow('City', document.querySelector('#city').value);
+    addRow('Adress', document.querySelector('#adress').value);
+    addRow('Language', langString);
 }
 document.querySelector('.btn').onclick = fname;
