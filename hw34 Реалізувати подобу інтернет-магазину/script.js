@@ -1,51 +1,48 @@
 
+const clothes = {
+    'Мужская': ['Брюки', 'Рубашки', 'Галстуки'],
+    'Женская': ['Юбки', 'Платья', 'Блузки'],
+    'Детская': ['Брюки', 'Куртки', 'Перчатки'],
+};
 
 
+const categories = document.getElementsByClassName('category');
+const products = document.getElementById('products');
+const productListElement = document.getElementById('product-list');
+const productDetailsElement = document.getElementById('infobox');
+const buyButton = document.getElementById('buy-button');
+let selProduct = '';
 
+function showProducts(category) {
+    productListElement.innerHTML = '';
+    const products = clothes[category];
+    products.forEach((product) => {
+        const listItem = document.createElement('option');
+        listItem.innerText = product;
+        productListElement.appendChild(listItem);
+    });
 
-// const clothes = {
-//     'Мужская': ['Брюки', 'Рубашки', 'Галстуки'],
-//     'Женская': ['Юбки', 'Платья', 'Блузки'],
-//     'Детская': ['Брюки', 'Куртки', 'Перчатки'],
-// };
+}
 
-const categoryElements = document.getElementsByClassName('main-nav').value;
-// const products = document.getElementById('products');
-// const productListElement = document.getElementById('product-list');
-// const productInfo = document.getElementById('product-info');
-// const productDetailsElement = document.getElementById('product-details');
-// const buyButton = document.getElementById('buy-button');
+Array.from(categories).forEach((element) => {
+    element.addEventListener('click', (event) => {
+        const category = event.target.innerText;
+        showProducts(category);
+    });
+});
 
-// function showProducts(category) {
-//     productListElement.innerHTML = '';
-//     const products = data[category];
-//         products.forEach((product) => {
-//         const listItem = document.createElement('li');
-//         listItem.innerText = product;
-//         productListElement.appendChild(listItem);
-//     });
+productListElement.addEventListener('click', (event) => {
+    const product = event.target.innerText;
+    selProduct = product;
+    productDetailsElement.innerText = 'You choose: ' + product;
+    buyButton.style.display = 'block';
 
-// }
+});
 
-// Array.from(categoryElements).forEach((element) => {
-//     element.addEventListener('click', (event) => {
-//         const category = event.target.innerText;
-//         showProducts(category);
-//         productInfo.style.display = 'block';
-//         products.style.display = 'block';
-//     });
-// });
-
-// productListElement.addEventListener('click', (event) => {
-//     const product = event.target.innerText;
-//     productDetailsElement.innerText = 'Ви обрали: ' + product;
-// });
-
-// buyButton.addEventListener('click', ( ) => {
-//     alert('Товар куплений');
-//     productDetailsElement.innerText = '';
-//     productListElement.innerHTML = '';
-//     productInfo.style.display = 'none';
-//     products.style.display = 'none';
-// });
+buyButton.addEventListener('click', () => {
+    alert('You bought ' + selProduct);
+    productDetailsElement.innerText = '';
+    productListElement.innerHTML = '';
+    buyButton.style.display = 'none';
+});
 
