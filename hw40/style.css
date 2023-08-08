@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 1400px;
+    margin: 0 auto;
+}
+.main-section{
+    display: flex;
+    /* justify-content: space-between; */
+    width: 1000px;
+    margin: 0 auto;
+}
+.lista{
+    width: 150px;
+}
+.title{
+    font-style: italic;
+    font-size: xx-large;
+    margin: 0 auto;
+}
+#buy-button{
+    display: none;
+}
+#form{
+    display: none;
+}

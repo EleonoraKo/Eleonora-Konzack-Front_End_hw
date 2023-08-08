@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Internet Shop</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+    <div class="container">
+        <div class="title">Online webshop</div>
+        <div class="main-section">
+        <div class="left-side">
+            <select name="categories" size="10" class="lista">  
+                <option class="category">Мужская</option>  
+                <option class="category">Женская</option>  
+                <option class="category">Детская</option>
+            </select>
+        </div>
+        <div class="middle-side">
+            <select name="products" size="10" id="product-list" class="lista">  
+                <option> ... </option>  
+            </select>
+        </div>
+        <div class="right-side">
+            <div id="infobox">
+                ...
+            </div>
+            <button id="buy-button">Buy</button>
+        </div>
+        <div id="form">
+            <form>
+                <label for="pib">ПІБ:</label><br>
+                <input type="text" id="pib" name="pib" value="" required><br>
+                <label>
+                    Місто:<br>
+                    <select name="city" id="city">
+                        <optgroup label="Україна">
+                            <option value="Київ">Київ</option>
+                            <option value="Львів">Львів</option>
+                            <option value="Одеса">Одеса</option>
+                            <option value="Одеса">Харків</option>
+                            <option value="Одеса">Дніпро</option>
+                        </optgroup>
+                    </select>
+                </label><br>
+                <label for="sklad">Обрати склад Нової Пошти</label><br>
+                <input type="text" id="sklad" name="sklad" value="" required><br>
+                <label>
+                    Тип оптати:<br>
+                    <select name="payment" id="payment">
+                        <optgroup label="Україна">
+                            <option value="postpaid">Післяплата</option>
+                            <option value="card">Оплпта на картку</option>
+                        </optgroup>
+                    </select>
+                </label><br>
+                <label for="quantity">Кількість:</label><br>
+                <input type="text" id="quantity" name="quantity" value="1" required><br>
+                <label for="comment">Залишити коментарій:</label><br>
+                <input type="text" id="comment" name="comment" value="" required><br>
+
+                
+                <input type="submit" value="Submit" onclick="showOrder()">
+              </form> 
+        </div>
+    </div>
+    </div>
+
+
+
+
+
     <script src="./script.js"></script>
-    <div class="result"></div>
+
 </body>
+
 </html>
